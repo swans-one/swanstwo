@@ -1,0 +1,5 @@
+* Basics [0/5]
+** TODO write an article template
+** TODO get pandoc to use the article template
+** TODO configure nginx to serve css/js/images
+** TODO configure nginx to re-write html pages to not include .html
