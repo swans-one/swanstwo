@@ -28,7 +28,7 @@ gulp.task('articles', function () {
             ext: '.html',
             args: pandoc_articles_config,
         }))
-        .pipe(gulp.dest(config.paths.dist))
+        .pipe(gulp.dest(config.paths.dist + '/html'))
 });
 
 gulp.task('default', ['html', 'articles']);
