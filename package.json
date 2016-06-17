@@ -8,6 +8,7 @@
   "author": "Erik Swanson",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-pandoc": "^0.2.2"
   }
 }
