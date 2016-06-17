@@ -7,12 +7,15 @@ var config = {
         articles: './src/articles/*.md',
         images: './src/images/*',
         dist: './static',
-    }
+    },
+    templates: {
+        article_template: './src/templates/article.html'
+    },
 };
 
 var pandoc_articles_config = [
     '--smart',
-    '-s',
+    '--template=' + config.templates.article_template,
 ]
 
 gulp.task('html', function () {
