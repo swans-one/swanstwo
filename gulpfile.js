@@ -11,7 +11,8 @@ var config = {
         sass: './src/css/**/*.scss',
         articles: './src/articles/**/*.md',
         images: './src/media/images/**/*',
-        favicon: '/src/html/favicon.ico',
+        favicon: './src/html/favicon.ico',
+        fonts: './src/fonts/**/*',
         dist: './static',
     },
     templates: {
@@ -50,6 +51,11 @@ gulp.task('favicon', function () {
         .pipe(gulp.dest(config.paths.dist + '/html'))
 });
 
+gulp.task('fonts', function () {
+    gulp.src(config.paths.fonts, {base: './src'})
+        .pipe(gulp.dest(config.paths.dist))
+});
+
 gulp.task('articles', function () {
     gulp.src(config.paths.articles, {base: './src'})
         .pipe(pandoc({
@@ -61,4 +67,15 @@ gulp.task('articles', function () {
         .pipe(gulp.dest(config.paths.dist + '/html'))
 });
 
-gulp.task('default', ['html', 'css', 'sass', 'articles', 'images', 'favicon']);
+gulp.task(
+    'default',
+    [
+        'html',
+        'css',
+        'sass',
+        'articles',
+        'images',
+        'favicon',
+        'fonts',
+    ]
+);

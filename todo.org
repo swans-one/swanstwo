@@ -4,7 +4,7 @@
 ** DONE configure nginx to serve css/js/images
 ** DONE configure nginx to re-write html pages to not include .html
 
-* Content [8/8]
+* Content [9/9]
 ** DONE Move my homepage html
 ** DONE Move my homepage css
 ** DONE Move my writing page html
@@ -13,6 +13,7 @@
 ** DONE Move my existing article css
 ** DONE Move my presentation pages
 ** DONE Move all the supporting documents
+** DONE Move over fonts
 
 * Web Server
 ** DONE Get Docker to copy over configs
