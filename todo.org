@@ -42,7 +42,7 @@ Or with different names
 ** TODO Convert my writing page css to sass
 ** TODO Delete all the old/outdated stuff
 
-* Meta-data [0/2]
+* Meta-data [0/3]
 ** TODO Get pandoc to handle article metadata [0/4]
 - [ ] Author
 - [ ] Date Written
@@ -50,6 +50,7 @@ Or with different names
 - [ ] License
 - [ ] Breadcrumbs for article header
 ** TODO Organize the files by date (in filesystem)
+** TODO Use handlebars to template out the writings list
 
 * New Content [0/1]
 ** TODO Make a list of Presentations I've given since 2013
