@@ -1,3 +1,5 @@
+gulp
+
 docker kill swanstwo-dev
 docker rm swanstwo-dev
 
