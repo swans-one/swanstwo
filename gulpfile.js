@@ -1,12 +1,16 @@
+'use-strict';
+
 var gulp = require('gulp');
 var pandoc = require('gulp-pandoc');
+var sass = require('gulp-sass');
 
 var config = {
     paths: {
-        html: './src/html/*.html',
-        css: './src/css/*.css',
-        articles: './src/articles/*.md',
-        images: './src/images/*',
+        html: './src/html/**/*.html',
+        css: './src/css/**/*.css',
+        sass: './src/css/**/*.scss',
+        articles: './src/articles/**/*.md',
+        images: './src/images/**/*',
         dist: './static',
     },
     templates: {
@@ -29,6 +33,12 @@ gulp.task('css', function () {
         .pipe(gulp.dest(config.paths.dist))
 });
 
+gulp.task('sass', function () {
+    gulp.src(config.paths.sass, {base: './src'})
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(config.paths.dist))
+})
+
 gulp.task('articles', function () {
     gulp.src(config.paths.articles, {base: './src'})
         .pipe(pandoc({
@@ -40,4 +50,4 @@ gulp.task('articles', function () {
         .pipe(gulp.dest(config.paths.dist + '/html'))
 });
 
-gulp.task('default', ['html', 'css', 'articles']);
+gulp.task('default', ['html', 'css', 'sass', 'articles']);
