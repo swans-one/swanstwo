@@ -36,3 +36,9 @@ Or with different names
 - [ ] Date Written
 - [ ] Last modified
 - [ ] License
+
+* Deployment [0/4]
+** TODO Setup a test DO server to deploy to
+** TODO Decide how we're going to deploy containers
+** TODO Write down in the readme how we're going to deploy
+** TODO Make sure that nginx is configured properly for DO
