@@ -1,0 +1,121 @@
+/*########################################################################
+ writings/list.css
+
+ The stylesheet for the list of my written work. Does not include
+ things that are broken out into other css files.
+########################################################################*/
+
+/*------------------------------------------------------------------------
+ Base Rules
+------------------------------------------------------------------------*/
+
+/*
+Color Scheme
+
+glass
+RGB: 247, 249, 248
+Hex: F7F9F8
+
+faceless
+RGB: 240, 241, 235
+Hex: F0F1EB
+
+Will
+RGB: 254, 223, 130
+Hex: FEDF82
+
+Berry Much
+RGB: 242, 83, 113
+Hex: F25371
+
+Toy Blue
+RGB: 0, 122, 189
+Hex: 007ABD
+
+a field of thorns
+RGB: 6, 0, 0
+Hex: 060000
+*/
+
+html {}
+
+body {
+    background: rgba(247, 249, 248, 1); /*glass*/
+    color: rgba(6, 0, 0, 1); /*a field of thorns*/
+    font-family: Helvetica, Ariel, sans-serif;
+}
+
+/*------------------------------------------------------------------------
+ Layout Rules
+------------------------------------------------------------------------*/
+
+#writings-list {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 80px 0px 0px 0px;
+    
+}
+
+/* Sections */
+.section {
+    margin-bottom: 80px;
+}
+
+/*------------------------------------------------------------------------
+ Module Rules
+------------------------------------------------------------------------*/
+
+/* Section Headings */
+#writings-list h1 {
+    position: relative;
+    left: -6%;
+    padding-bottom: 1em;
+    font-size: 2em;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+}
+
+/* Individual Article Entries */
+#writings-list li {
+    margin-bottom: 1em;
+    width: 100%;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+/* Prepend entries with a pointer finger */
+#writings-list li:before {
+    position: absolute;
+    left: 5%;
+    content: "\261e"
+}
+
+/* Link Stylings */
+#writings-list a {
+    display: block;
+    width: 100%;
+    padding-right: 5%;
+    border-right: solid rgba(247, 249, 248, 1) 2px;
+    color: rgba(0, 122, 189, 1);
+    text-decoration: none;
+    background-color: rgba(247, 249, 248, 1);
+}
+#writings-list a:visited {
+    border-right-color: rgba(6, 0, 0, 1);
+}
+#writings-list a:hover {
+    color: rgba(242, 83, 113, 1);
+}
+
+/*------------------------------------------------------------------------
+ State Rules
+------------------------------------------------------------------------*/
+
+#writings-list a {
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+/*------------------------------------------------------------------------
+ Theme Rules
+------------------------------------------------------------------------*/

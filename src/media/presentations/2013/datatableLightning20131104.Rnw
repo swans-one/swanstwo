@@ -1,0 +1,231 @@
+\documentclass{beamer}
+
+% packages
+\usepackage{graphicx}
+
+% setup appearance:
+
+  % simple theme with no bells or whistles. Try Rochester or
+  % Pittsburgh.
+  \usetheme[height = 7mm]{Rochester}
+  \usecolortheme{whale}
+  
+% setup author/title/etc
+\title{Using \texttt{data.table}.}
+\author{Erik Swanson}
+
+% Setup section macros
+\AtBeginSection{\frame{\sectionpage}}
+
+\begin{document}
+<<label=imports,results=hide,echo=FALSE>>=
+library(xtable)
+library(ggplot2)
+library(plyr)
+@ 
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+  \includegraphics{images/ambition-logo1024.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Better than data.frame}
+<<label=setup,results=hide,echo=FALSE>>=
+names <- c("Jacob","Mason","Ethan","Noah","William","Liam","Jayden",
+           "Michael","Alexander","Aiden","Sophia","Emma","Isabella",
+           "Olivia","Ava","Emily","Abigail","Mia","Madison","Elizabeth")
+graduated <- rep(c("1999", "2000"), 10)
+gpa <- sprintf("%1.1f",c(seq(2.2, 4.0,.4), seq(2.1, 3.9, .4), seq(3.1, 4.0, .1)))
+df <- data.frame(names = names, graduated = graduated, gpa = gpa)
+@ 
+
+\begin{frame}{Going Faster}
+<<label=dfsort,results=tex,echo=FALSE>>=
+print(xtable(df[sample(1:20,20),]), 
+      include.rownames=FALSE, size="\\footnotesize")
+@
+\end{frame}
+
+\begin{frame}{Going Faster}
+<<lable=dtsort,results=tex,echo=FALSE>>=
+print(xtable(df[order(df$graduated, df$gpa),]), 
+      include.rownames=FALSE, size="footnotesize")
+@ 
+\end{frame}
+
+\section{Basic Syntax}
+
+\begin{frame}[fragile]{Create a data.table}
+\begin{itemize}
+  \item<1-> Use the fuction \texttt{data.table}
+  \item<2-> Syntax just like \texttt{data.frame}
+\end{itemize}
+\begin{block}<3->{}
+<<label=basicsetup>>=
+library(data.table)
+my.dt <- data.table(maj=rep(c("math","art"), 100),
+                    yrs.exp=rep(c(1:10), 20),
+                    salary=10000 
+                     * rep(c(2,1), 100) 
+                     * rep(seq(1.1, 2, .1), 20)
+                     * rgamma(200,shape=4,scale=.75)
+                   )
+@
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Setting Keys \& Reviewing Your Data Tables}
+\begin{itemize}
+  \item<1-> Speedup from sorting comes by setting ``keys''
+\end{itemize}
+\begin{block}<2->{}
+<<label=basickeys>>=
+setkey(my.dt, maj, yrs.exp)
+key(my.dt)
+@ 
+\end{block}
+\begin{itemize}
+  \item<3-> If you ever want to see all your tables and keys.
+\end{itemize}
+\begin{block}<4->{}
+<<label=basictest>>=
+tables()
+@ 
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Arguments}
+\begin{itemize}
+  \item<1-> A \texttt{data.table} uses \texttt{`[`} like a \texttt{data.frame}
+  \item<1-> There are a number of different arguments to \texttt{`[`}
+  \item<1-> Going to talk about \texttt{i, j, by}
+\end{itemize}
+\begin{block}<2->{}
+<<label=basicargs>>=
+my.dt["art", mean(salary), by=yrs.exp]
+@ 
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Argument: \texttt{i}}
+\begin{itemize}
+  \item<1-> Choose which rows you're working with.
+  \item<1-> Can take a logical vector just like the first argument in a dataframe.
+\end{itemize}
+\begin{block}<2->{}
+<<label=dfi>>=
+result.i.scan <- my.dt[maj=="math" & yrs.exp==7, ]
+head(result.i.scan)
+@ 
+\end{block}
+\begin{itemize}
+  \item<2-> This is still a linear scan. Avoid this!
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Argument: \texttt{i}}
+\begin{itemize}
+  \item<1-> Use another \texttt{data.table} for \texttt{i}.
+  \item<2-> Or use the \texttt{J} shortcut function to lookup by keys.
+\end{itemize}
+\begin{block}<2->{}
+<<label=dti>>=
+result.i.search <- my.dt[J("math", 7), ]
+head(result.i.search)
+identical(result.i.scan, result.i.search)
+@ 
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Argument: \texttt{j}}
+\begin{itemize}
+  \item<1-> Choose which columns to display.
+  \item<2-> Takes a \texttt{list} of column names, or functions of
+    column names
+\end{itemize}
+\begin{block}<3->{}
+<<label=dtj>>=
+m <- mean(my.dt$salary)
+res.j <- my.dt[,list(maj, yrs.exp, diff=salary - m)]
+head(res.j)
+@
+\end{block}
+\end{frame}
+
+\begin{frame}{Argument: \texttt{by}}
+\begin{itemize}
+  \item<1-> Lets you group by any combination of keys.
+  \item<2-> Any function in the \texttt{j} argument will be performed
+    on each set of grouped values.
+  \item<3-> Much faster than packages such as \texttt{plyr}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Argument: \texttt{by}}
+\begin{block}{}
+<<label=dtby>>=
+my.dt[ , list(mean=mean(salary), sd=sd(salary)), 
+         by="maj,yrs.exp"]
+@ 
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Fast Updates}
+\begin{itemize}
+  \item<1-> The operator \texttt{:=} in the \texttt{j} argument causes side effects.
+  \item<2-> Fast and expressive.
+  \item<3-> Works with the \texttt{by} argument. 
+\end{itemize}
+\begin{block}<4->{}
+<<label=dtupdate,results=hide>>=
+my.dt[, maj.sal.sd := sd(salary), by=maj]
+@ 
+<<label=dtupdateshow>>=
+head(my.dt)
+@ 
+\end{block}
+\end{frame}
+
+\section{In Action}
+\begin{frame}[fragile]{Speed Demo}
+  \begin{block}{}
+  \begin{verbatim}
+> df <- read.csv("~/current_playlist_2006-2012.csv", 
+                 stringsAsFactors = FALSE)
+> nrow(df)
+[1] 805604
+> names(df)
+[1] "id"   "date"   "title"  "artist"   "starrating"
+> system.time(ddply(df, 
+                    .(artist, title), 
+                    function(df) { nrow(df) })
+             )
+   user  system elapsed 
+ 16.712   0.334  17.570 
+  \end{verbatim}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Speed Demo}
+  \begin{block}{}
+  \begin{verbatim}
+> dt <- data.table(df)
+> setkey(dt, artist, title)
+> system.time(dt[, list(nrow = .N), by="artist,title"])
+   user  system elapsed 
+  0.095   0.005   0.101 
+> 17.57 / .101
+[1] 173.9604
+  \end{verbatim}
+  \end{block}
+\end{frame}
+
+
+
+\end{document}

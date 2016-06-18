@@ -1,0 +1,265 @@
+/*######################################################################
+hexagon.css
+
+This contains the information needed to create the hexagon-e logo.
+
+This is imported by every page. The homepage uses it in the header,
+each other page in the sidebar.
+######################################################################*/
+
+/*----------------------------------------------------------------------
+Base Rules
+----------------------------------------------------------------------*/
+
+/*
+Color Scheme
+
+glass
+RGB: 247, 249, 248
+Hex: F7F9F8
+
+Will
+RGB: 254, 223, 130
+Hex: FEDF82
+
+Berry Much
+RGB: 242, 83, 113
+Hex: F25371
+
+Toy Blue
+RGB: 0, 122, 189
+Hex: 007ABD
+
+Blue Tint
+RGB: 100, 100, 189
+Hex: 6464BD
+
+a field of thorns
+RGB: 6, 0, 0
+Hex: 060000
+*/
+
+
+/*----------------------------------------------------------------------
+Layout Rules
+----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------
+Module Rules
+----------------------------------------------------------------------*/
+
+
+/*
+ * Hexagon Styling.
+ *
+ * Given: width  = 1 * x
+ * Then:  height = 0.57735 * x
+ *        bump = 0.28868 * x
+ */
+
+.hex-outer {
+    display: inline-block;
+    
+    position: relative;
+    left: -10px;
+    top: 10px;
+    
+    width: 90px;
+    height: 52px;
+    
+    background-color: rgba(242, 83, 113, 1);
+}
+
+.hex-inner {
+    display: inline-block;
+    
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    
+    width: 70px;
+    height: 40px;  
+    
+    background-color: rgba(247,249,248,1);
+}
+
+.hex-letter {
+    position: absolute;
+    left: 10px;
+    top: -18px;
+    z-index: 10;
+    
+    font-family: PacificoRegular;
+    font-size: 64px;
+}
+
+.hex-outer:before { 
+    content: "";
+    
+    position: absolute;
+    left: 0px;
+    top: -25px;
+    
+    width: 0px;
+    height: 0px;
+    
+    border-bottom: 26px solid rgba(242, 83, 113, 1);;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+}
+
+.hex-outer:after { 
+    content: "";
+    
+    position: absolute;
+    left: 0px;
+    top: 51px;
+    
+    width: 0px;
+    height: 0px;
+    
+    border-top: 26px solid rgba(242, 83, 113, 1);;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+}
+
+.hex-inner:before { 
+    content: "";
+    
+    position: absolute;
+    left: 0px;
+    top: -20px;
+    
+    width: 0px;
+    height: 0px;
+    
+    border-bottom: 20px solid rgba(247,249,248,1);
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+}
+
+.hex-inner:after { 
+    content: "";
+    z-index: 1;
+    
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    
+    width: 0px;
+    height: 0px;
+    
+    border-top: 20px solid rgba(247,249,248,1);
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+}
+
+
+
+/*------------------------------------------------------------------------
+ Medium Sized Hexagon
+
+ This modifies the styles above to make it so the letter is in 48
+ point font instead of 64 point.
+
+ Sizes in px (width, height, bump):
+   outer: 62, 36, 18
+   inner: 50, 29, 14
+
+------------------------------------------------------------------------*/
+.hex-outer.medium-hex {
+    width: 62px;
+    height: 36px;
+}
+.hex-inner.medium-hex {
+    width: 50px;
+    height: 29px;
+    left: 6px;
+    top: 3px;
+}
+.hex-letter.medium-hex{
+    left: 6px;
+    top: -14px;
+    font-size: 48px;
+}
+.hex-outer.medium-hex:before {
+    top: -17px;
+    border-bottom: 18px solid rgba(242, 83, 113, 1);;
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+}
+.hex-outer.medium-hex:after {
+    top: 35px;
+    border-top: 18px solid rgba(242, 83, 113, 1);;
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+}
+.hex-inner.medium-hex:before {
+    top: -14px;
+    border-bottom: 14px solid rgba(247,249,248,1);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+.hex-inner.medium-hex:after {
+    top: 29px;
+    border-top: 14px solid rgba(247,249,248,1);
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+
+
+/*------------------------------------------------------------------------
+ Small Sized Hexagon
+
+ This modifies the styles above to make it so the letter is in 36
+ point font instead of 64 point.
+
+ Sizes in px (width, height, bump):
+   outer: 46, 27, 14
+   inner: 38, 22, 11
+
+------------------------------------------------------------------------*/
+.hex-outer.small-hex {
+    width: 46px;
+    height: 27px;
+}
+.hex-inner.small-hex {
+    width: 38px;
+    height: 22px;
+    left: 4px;
+    top: 2px;
+}
+.hex-letter.small-hex{
+    top: -10px;
+    left: 4px;
+    font-size: 36px;
+}
+.hex-outer.small-hex:before {
+    top: -13px;
+    left: -1px;
+    border-bottom: 14px solid rgba(242, 83, 113, 1);;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+}
+.hex-outer.small-hex:after {
+    top: 26px;
+    left: -1px;
+    border-top: 14px solid rgba(242, 83, 113, 1);;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+}
+.hex-inner.small-hex:before {
+    top: -10px;
+    left: -1px;
+    border-bottom: 11px solid rgba(247,249,248,1);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}
+.hex-inner.small-hex:after {
+    top: 21px;
+    left: -1px;
+    border-top: 11px solid rgba(247,249,248,1);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}
+

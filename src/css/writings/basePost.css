@@ -1,0 +1,251 @@
+/*######################################################################
+basePost.css
+
+This file is referenced by my "writings" posts. It contains basic
+layouts.
+######################################################################*/
+
+
+/*----------------------------------------------------------------------
+Base Rules
+----------------------------------------------------------------------*/
+
+/*
+Color Scheme
+
+glass
+RGB: 247, 249, 248
+Hex: F7F9F8
+
+faceless
+RGB: 240, 241, 235
+Hex: F0F1EB
+
+Will
+RGB: 254, 223, 130
+Hex: FEDF82
+
+Berry Much
+RGB: 242, 83, 113
+Hex: F25371
+
+Toy Blue
+RGB: 0, 122, 189
+Hex: 007ABD
+
+Blue Tint
+RGB: 100, 100, 189
+Hex: 6464BD
+
+a field of thorns
+RGB: 6, 0, 0
+Hex: 060000
+*/
+
+html {
+    height: 100%;
+}
+
+body {
+    background: rgba(247, 249, 248, 1); /*glass*/
+    color: rgba(6, 0, 0, 1); /*a field of thorns*/
+    font-family: Helvetica, Ariel, sans-serif;
+    height: 100%;
+}
+
+em {
+    font-style: italic;
+}
+
+/*------------------------------------------------------------------------
+ Layout Rules
+------------------------------------------------------------------------*/
+
+/* Size/position of the main content div */
+#content {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 80px 0px 80px 0px;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    max-width: 800px;
+}
+
+/* Paragraph spacing */
+#content p {
+    margin-bottom: 1.5em;
+}
+
+/* Force footer to be on the bottom */
+.wrapper {
+    min-height: 100%;
+    margin: 0 auto -24px;
+}
+.vspace {
+    height: 24px;
+}
+footer {
+    height: 24px;
+}
+.vspace, footer {
+    clear: both;
+}
+
+/*------------------------------------------------------------------------
+ Module Rules
+------------------------------------------------------------------------*/
+
+/* Titles, subtitles, sections, subsections */
+.post-title {
+    font-size: 2em;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+    margin-bottom: 15px;
+}
+.post-subtitle {
+    font-size: 1.5em;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+    margin-bottom: 30px;
+}
+.section {
+    font-size: 1.2em;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+/* Minimalist Table
+     - As described in
+       http://coding.smashingmagazine.com/2008/08/13/top-10-css-table-designs/
+*/
+.simple-table {
+    background: rgba(247, 249, 248, 1); /*glass*/
+    color: rgba(6, 0, 0, 1); /*a field of thorns*/
+    font-family: Helvetica, Ariel, sans-serif;
+    font-size: .9em;
+    margin-left: 10%;
+    margin-bottom: 1.5em;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.simple-table th {
+    font-size: 1em
+    font-weight: normal;
+    padding: 5px 8px;
+    border-bottom: 2px solid rgba(6, 0, 0, 1);
+}
+.simple-table td {
+    /* border-bottom: 1px solid rgba(240, 241, 235, 1); */
+    border-bottom: 2px solid rgba(240, 241, 235, 1);
+    padding: 2px 4px;
+}
+.simple-table tbody tr:hover td {
+    background: rgba(240, 241, 235, 1);
+}
+
+/* Simple Unordered List */
+.simple-ulist {
+    margin-bottom: 1.5em;
+    list-style-type: circle;
+}
+
+/* Figures and captions */
+div.figure {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+div.figure .caption {
+    margin-left: 60px;
+    margin-right: 30px;
+    font-style: italic;
+    font-size: .9em;
+}
+div.figure img {
+    border: 1px solid rgba(6, 0, 0, 1);
+}
+
+/* Download media links */
+div.download {
+    width: 100%;
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+/* Link Stylings */
+#content a:link {
+    color: rgba(0, 122, 189, 1);
+    text-decoration: none;
+}
+#content a:visited {
+    color: rgba(100, 100, 189, 1);
+}
+#content a:hover {
+    color: rgba(242, 83, 113, 1);
+}
+#content a:active {
+    color: rgba(242, 83, 113, 1);
+}
+
+/* Footer Styling */
+#footer-content {
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 800px;
+    font-size: .9em;
+}
+footer .footer-div-left {
+    float: left;
+    width: 50%;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+}
+footer .footer-div-right {
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+footer a:link {
+    color: rgba(0, 122, 189, 1);
+    text-decoration: none;
+}
+footer a:visited {
+    color: rgba(100, 100, 189, 1);
+}
+footer a:hover {
+    color: rgba(242, 83, 113, 1);
+}
+footer a:active {
+    color: rgba(242, 83, 113, 1);
+}
+
+/* End of article gradient rule */
+hr.gradient {
+    margin-top: 40px;
+    border: 0;
+    height: 1px;
+    background-image:      linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+
+}
+
+/* End of article note */
+.endnote {
+    font-size: .8em;
+    font-style: italic;
+}
+
+/* quote Styling */
+#content blockquote {
+    margin-left: -5px;
+    padding-left: 10px;
+    border-left: 5px solid rgba(6,0,0,1)
+}
+#content q:before {
+    content: '\201C';
+}
+#content q:after {
+    content: '\201D';
+}

@@ -10,7 +10,7 @@ var config = {
         css: './src/css/**/*.css',
         sass: './src/css/**/*.scss',
         articles: './src/articles/**/*.md',
-        images: './src/images/**/*',
+        images: './src/media/images/**/*',
         favicon: '/src/html/favicon.ico',
         dist: './static',
     },
