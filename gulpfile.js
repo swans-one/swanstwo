@@ -4,6 +4,7 @@ var pandoc = require('gulp-pandoc');
 var config = {
     paths: {
         html: './src/html/*.html',
+        css: './src/css/*.css',
         articles: './src/articles/*.md',
         images: './src/images/*',
         dist: './static',
@@ -23,6 +24,11 @@ gulp.task('html', function () {
         .pipe(gulp.dest(config.paths.dist))
 });
 
+gulp.task('css', function () {
+    gulp.src(config.paths.css, {base: './src'})
+        .pipe(gulp.dest(config.paths.dist))
+});
+
 gulp.task('articles', function () {
     gulp.src(config.paths.articles, {base: './src'})
         .pipe(pandoc({
@@ -34,4 +40,4 @@ gulp.task('articles', function () {
         .pipe(gulp.dest(config.paths.dist + '/html'))
 });
 
-gulp.task('default', ['html', 'articles']);
+gulp.task('default', ['html', 'css', 'articles']);
