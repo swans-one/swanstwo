@@ -29,11 +29,12 @@ Or with different names
 ** TODO Get source code highlighting working
 ** TODO Improve the style for the html templates
 
-* Conversion [0/4]
+* Conversion [0/5]
 ** TODO Convert my homepage css to sass
 ** TODO Convert my article to markdown
 ** TODO Convert my article css to sass
 ** TODO Convert my writing page css to sass
+** TODO Delete all the old/outdated stuff
 
 * Meta-data [0/2]
 ** TODO Get pandoc to handle article metadata [0/4]
