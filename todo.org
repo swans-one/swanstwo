@@ -15,6 +15,12 @@
 ** DONE Move all the supporting documents
 ** DONE Move over fonts
 
+* Updating [0/4]
+- [ ] homepage
+- [ ] writing list
+- [ ] the current
+- [ ] R presentation
+
 * Web Server
 ** DONE Get Docker to copy over configs
 ** TODO Write some 404/500 pages
@@ -44,6 +50,9 @@ Or with different names
 - [ ] License
 - [ ] Breadcrumbs for article header
 ** TODO Organize the files by date (in filesystem)
+
+* New Content [0/1]
+** TODO Make a list of Presentations I've given since 2013
 
 * Deployment [0/4]
 ** TODO Setup a test DO server to deploy to
