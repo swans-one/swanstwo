@@ -1,0 +1,16 @@
+@import 'reset';
+
+@import 'colors';
+@import 'fonts';
+
+
+html {
+    height: 100%;
+}
+
+body {
+    background: $color-glass-white;
+    color: $color-field-of-thorns-black;
+    font-family: Helvetica, Ariel, sans-serif;
+    height: 100%;
+}
