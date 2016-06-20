@@ -7,47 +7,6 @@ This is imported by every page. The homepage uses it in the header,
 each other page in the sidebar.
 ######################################################################*/
 
-/*----------------------------------------------------------------------
-Base Rules
-----------------------------------------------------------------------*/
-
-/*
-Color Scheme
-
-glass
-RGB: 247, 249, 248
-Hex: F7F9F8
-
-Will
-RGB: 254, 223, 130
-Hex: FEDF82
-
-Berry Much
-RGB: 242, 83, 113
-Hex: F25371
-
-Toy Blue
-RGB: 0, 122, 189
-Hex: 007ABD
-
-Blue Tint
-RGB: 100, 100, 189
-Hex: 6464BD
-
-a field of thorns
-RGB: 6, 0, 0
-Hex: 060000
-*/
-
-
-/*----------------------------------------------------------------------
-Layout Rules
-----------------------------------------------------------------------*/
-
-/*----------------------------------------------------------------------
-Module Rules
-----------------------------------------------------------------------*/
-
 
 /*
  * Hexagon Styling.
@@ -59,27 +18,27 @@ Module Rules
 
 .hex-outer {
     display: inline-block;
-    
+
     position: relative;
     left: -10px;
     top: 10px;
-    
+
     width: 90px;
     height: 52px;
-    
+
     background-color: rgba(242, 83, 113, 1);
 }
 
 .hex-inner {
     display: inline-block;
-    
+
     position: absolute;
     left: 10px;
     top: 5px;
-    
+
     width: 70px;
-    height: 40px;  
-    
+    height: 40px;
+
     background-color: rgba(247,249,248,1);
 }
 
@@ -88,67 +47,67 @@ Module Rules
     left: 10px;
     top: -18px;
     z-index: 10;
-    
+
     font-family: PacificoRegular;
     font-size: 64px;
 }
 
-.hex-outer:before { 
+.hex-outer:before {
     content: "";
-    
+
     position: absolute;
     left: 0px;
     top: -25px;
-    
+
     width: 0px;
     height: 0px;
-    
+
     border-bottom: 26px solid rgba(242, 83, 113, 1);;
     border-left: 45px solid transparent;
     border-right: 45px solid transparent;
 }
 
-.hex-outer:after { 
+.hex-outer:after {
     content: "";
-    
+
     position: absolute;
     left: 0px;
     top: 51px;
-    
+
     width: 0px;
     height: 0px;
-    
+
     border-top: 26px solid rgba(242, 83, 113, 1);;
     border-left: 45px solid transparent;
     border-right: 45px solid transparent;
 }
 
-.hex-inner:before { 
+.hex-inner:before {
     content: "";
-    
+
     position: absolute;
     left: 0px;
     top: -20px;
-    
+
     width: 0px;
     height: 0px;
-    
+
     border-bottom: 20px solid rgba(247,249,248,1);
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
 }
 
-.hex-inner:after { 
+.hex-inner:after {
     content: "";
     z-index: 1;
-    
+
     position: absolute;
     left: 0px;
     top: 40px;
-    
+
     width: 0px;
     height: 0px;
-    
+
     border-top: 20px solid rgba(247,249,248,1);
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
@@ -262,4 +221,3 @@ Module Rules
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
 }
-

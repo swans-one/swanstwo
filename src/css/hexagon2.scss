@@ -1,0 +1,115 @@
+/*
+ * Hexagon Styling.
+ *
+ * Given: width  = 1 * x
+ * Then:  height = 0.57735 * x
+ *        bump = 0.28868 * x
+ */
+
+$height-factor: 0.57735;
+$bump-factor: 0.28868;
+
+@mixin triangle {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+@mixin triangle-up($color, $width, $height) {
+    @include triangle;
+
+    border: {
+        bottom: $height solid $color;
+        left: $width * 0.5 solid transparent;
+        right: $width * 0.5 solid transparent; }
+}
+
+@mixin triangle-down($color, $width, $height) {
+    @include triangle;
+
+    border: {
+        top: $height solid $color;
+        left: $width * 0.5 solid transparent;
+        right: $width * 0.5 solid transparent; }
+}
+
+@mixin hex($color, $width, $z: null) {
+    $height: ceil($width * $height-factor);
+    $bump: ceil($width * $bump-factor);
+
+    display: inline-block;
+    position: absolute;
+
+    width: $width;
+    height: $height;
+
+    background-color: $color;
+
+    &:before {
+        @include triangle-up($color, $width, $bump);
+        left: 0px;
+        top: -$bump;
+        z-index: $z;
+    }
+
+    &:after {
+        @include triangle-down($color, $width, $bump);
+        left: 0px;
+        top: $height;
+        z-index: $z;
+    }
+}
+
+
+@mixin hexagon($border-color, $inner-color, $width, $border) {
+    $inner-width: $width - ($border * 2);
+    $inner-height: $inner-width * $height-factor;
+
+    display: inline-block;
+    position: relative;
+
+    .hex-outer {
+        @include hex($border-color, $width, -1);
+        position: relative;
+    }
+
+    .hex-inner {
+        test-blah: $inner-width;
+
+        @include hex($inner-color, $inner-width);
+
+        left: $border;
+        top: $border * $height-factor;
+    }
+
+    .hex-content {
+        position: absolute;
+
+        width: 100%;
+        text-align: center;
+
+        top: -$inner-height * 0.2;
+        z-index: 10;
+
+        font-size: $inner-width * 0.8;
+    }
+}
+
+.hex-100 {
+    @include hexagon(rgba(242, 83, 113, 1), rgba(247,249,248,1), 100px, 10px);
+}
+.hex-80 {
+    @include hexagon(rgba(242, 83, 113, 1), rgba(247,249,248,1), 80px, 8px);
+}
+.hex-60 {
+    @include hexagon(rgba(242, 83, 113, 1), rgba(247,249,248,1), 60px, 6px);
+}
+.hex-40 {
+    @include hexagon(rgba(242, 83, 113, 1), rgba(247,249,248,1), 40px, 4px);
+}
+
+.hex-text {
+    top: 0.15em;
+    left: 0.55em;
+}
