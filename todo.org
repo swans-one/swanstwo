@@ -35,12 +35,13 @@ Or with different names
 ** TODO Get source code highlighting working
 ** TODO Improve the style for the html templates
 
-* SASS [/]
-** TODO What's my plan here?
+* SASS [0/1]
+** TODO Figure out some best practices
 
 
-* Conversion [0/5]
-** TODO Convert my homepage css to sass
+* Conversion [2/6]
+** DONE Convert my homepage css to sass
+** DONE Convert my hexagon css to sass
 ** TODO Convert my article to markdown
 ** TODO Convert my article css to sass
 ** TODO Convert my writing page css to sass
