@@ -1,6 +1,6 @@
 @import 'base';
 
-@import 'hexagon';
+@import 'hex-lib';
 @import 'headerfooter';
 
 
@@ -15,7 +15,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
-    width: 560px;
+    width: 600px;
 
     > h1 {
         font-family: BlackboxMonoSerifBold, Courier, mono;
