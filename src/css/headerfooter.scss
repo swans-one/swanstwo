@@ -8,16 +8,16 @@
     font-family: BlackboxMonoSerifBold, Courier, mono;
     font-size: 1.1em;
 
-    background-color: rgba(240, 241, 235, 1);
-    box-shadow: inset 0px -1px 1px rgba(6, 0, 0, .2);
+    background-color: $color-faceless-taupe;
+    box-shadow: inset 0px -1px 1px rgba($color-field-of-thorns-black, 0.2);
 
     a {
         @include ease-in-out;
 
-        color: rgba(0, 122, 189, 1); /* Toy Blue */
+        color: $color-toy-blue;
 
-        &:hover { color: rgba(242, 83, 113, 1); /* Berry Munch */ }
-        &:active { color: rgba(242, 83, 113, 1); /* Berry Munch */ }
+        &:hover { color: $color-berry-munch-pink; }
+        &:active { color: $color-berry-munch-pink; }
     }
 }
 
@@ -33,7 +33,7 @@ footer {
     height: 24px;
     width: 100%;
     padding-top: 8px;
-    background: rgba(240, 241, 235, 1);
+    background: $color-glass-white;
 }
 
 .breadcrumb {
@@ -45,5 +45,5 @@ footer {
 }
 
 .ishadow {
-    box-shadow: inset 0px 1px 1px rgba(6, 0, 0, .2);
+    box-shadow: inset 0px 1px 1px rgba($color-field-of-thorns-black, 0.2);
 }
