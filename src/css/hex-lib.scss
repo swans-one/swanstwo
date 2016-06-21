@@ -70,14 +70,14 @@ $bump-factor: 0.28868;
     position: relative;
 
     .hex-outer {
-        @include hex($border-color, $width, -1);
+        @include hex($border-color, $width, 1);
         position: relative;
     }
 
     .hex-inner {
         test-blah: $inner-width;
 
-        @include hex($inner-color, $inner-width);
+        @include hex($inner-color, $inner-width, 2);
 
         left: $border;
         top: $border * $height-factor;
@@ -90,7 +90,7 @@ $bump-factor: 0.28868;
         text-align: center;
 
         top: -$inner-height * 0.2;
-        z-index: 10;
+        z-index: 3;
 
         font-size: $inner-width * 0.8;
     }
