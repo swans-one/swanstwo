@@ -1,0 +1,124 @@
+@import '../base';
+
+@import '../hex-lib';
+@import '../headerfooter';
+
+@import 'simple_table';
+@import 'simple_list';
+@import 'post_figure';
+@import 'gradient_rule';
+
+em {
+    font-style: italic;
+}
+
+footer {
+    height: 24px;
+
+    a {
+        &:link {
+            color: rgba(0, 122, 189, 1);
+            text-decoration: none; }
+        &:visited { color: rgba(100, 100, 189, 1); }
+        &:hover { color: rgba(242, 83, 113, 1); }
+        &:active { color: rgba(242, 83, 113, 1); }
+    }
+
+    .footer-div-left {
+        float: left;
+        width: 50%;
+        font-family: BlackboxMonoSerifBold, Courier, mono;
+    }
+
+    .footer-div-right {
+        float: left;
+        width: 50%;
+        text-align: right;
+    }
+}
+
+#content {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 80px 0px 80px 0px;
+    line-height: 1.5em;
+    font-size: 1.1em;
+    max-width: 800px;
+
+    p {
+        margin-bottom: 1.5em;
+    }
+
+    a {
+        &:link {
+            color: $color-toy-blue;
+            text-decoration: none; }
+        &:visited { color: $color-tint-blue; }
+        &:hover { color: $color-berry-munch-pink; }
+        &:active { color: $color-berry-munch-pink; }
+    }
+
+    blockquote {
+        margin-left: -5px;
+        padding-left: 10px;
+        border-left: 5px solid rgba(6,0,0,1)
+    }
+
+    q {
+        &:before { content: '\201C'; }
+        &:after { content: '\201D'; }
+    }
+
+}
+
+#footer-content {
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 800px;
+    font-size: .9em;
+}
+
+.post-title {
+    font-size: 2em;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+    margin-bottom: 15px;
+}
+
+.post-subtitle {
+    font-size: 1.5em;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+    margin-bottom: 30px;
+}
+
+.section {
+    font-size: 1.2em;
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+/* End of article note */
+.endnote {
+    font-size: .8em;
+    font-style: italic;
+}
+
+/* Download media links */
+div.download {
+    width: 100%;
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+/* Clearfix stuff */
+.wrapper {
+    min-height: 100%;
+    margin: 0 auto -24px;
+}
+.vspace {
+    height: 24px;
+}
+.vspace, footer {
+    clear: both;
+}
