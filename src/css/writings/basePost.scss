@@ -97,6 +97,10 @@ footer {
     margin-bottom: 5px;
 }
 
+.color-faceless-taupe {
+    @include color-hex($color-faceless-taupe);
+}
+
 /* End of article note */
 .endnote {
     font-size: .8em;

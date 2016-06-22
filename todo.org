@@ -46,12 +46,13 @@ Or, alternatively, setup the load path somehow.
 like: font-title, font-body
 
 
-* Conversion [4/7]
+* Conversion [6/8]
 ** DONE Convert my homepage css to sass
 ** DONE Convert my hexagon css to sass
 ** TODO Convert my article to markdown
 ** DONE Convert my article css to sass
-** TODO Convert my presentation page to use the same sass as my article
+** DONE Convert my presentation page css to sass
+** DONE Convert my presentation page to use the same sass as my article
 ** DONE Convert my writing page css to sass
 ** TODO Delete all the old/outdated stuff
 And all the crufty test stuff

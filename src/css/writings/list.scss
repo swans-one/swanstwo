@@ -44,6 +44,10 @@
     }
 }
 
+.color-faceless-taupe {
+    @include color-hex($color-faceless-taupe);
+}
+
 .section {
     margin-bottom: 80px;
 }

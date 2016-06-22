@@ -109,6 +109,13 @@ $bump-factor: 0.28868;
     @include hexagon(rgba(242, 83, 113, 1), rgba(247,249,248,1), 40px, 4px);
 }
 
+@mixin color-hex($color) {
+    background-color: $color !important;
+    border-color: $color !important;
+    &:before { border-bottom-color: $color !important; }
+    &:after { border-top-color: $color !important; }
+}
+
 .hex-text {
     top: 0.15em;
     left: -0.1em;

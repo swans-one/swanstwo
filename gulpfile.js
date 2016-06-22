@@ -11,6 +11,7 @@ var config = {
         sass: './src/css/**/*.scss',
         articles: './src/articles/**/*.md',
         images: './src/media/images/**/*',
+        presentations: './src/media/presentations/**/*',
         favicon: './src/html/favicon.ico',
         fonts: './src/fonts/**/*',
         dist: './static',
@@ -23,7 +24,7 @@ var config = {
 var pandoc_articles_config = [
     '--smart',
     '--template=' + config.templates.article_template,
-]
+];
 
 gulp.task('html', function () {
     gulp.src(config.paths.html, {base: './src'})
@@ -39,12 +40,17 @@ gulp.task('sass', function () {
     gulp.src(config.paths.sass, {base: './src'})
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(config.paths.dist))
-})
+});
 
 gulp.task('images', function () {
     gulp.src(config.paths.images, {base: './src'})
         .pipe(gulp.dest(config.paths.dist))
-})
+});
+
+gulp.task('presentations', function () {
+    gulp.src(config.paths.presentations, {base: './src'})
+        .pipe(gulp.dest(config.paths.dist))
+});
 
 gulp.task('favicon', function () {
     gulp.src(config.paths.favicon)
@@ -75,6 +81,7 @@ gulp.task(
         'sass',
         'articles',
         'images',
+        'presentations',
         'favicon',
         'fonts',
     ]
