@@ -99,9 +99,9 @@ Term 2
 
 : Definition 2
 
-      { some code, part of definition 2 }
+        { some code, part of definition 2 }
 
-  This is the third paragraph of the definiton
+    This is the third paragraph of the definiton
 
 
 Links and images
@@ -129,9 +129,13 @@ Images
 ------
 
 All it takes to add an image is to immediately prepend a link with an
-\!.
+\!. Apparently it will be wrapped in a `<figure>` block, and what
+would be the link text will be the caption.
 
-![erik](/media/images/erik_in_chair_w300.png "This will be the alt text")
+![This could be a long piece of well thought out text that describes the
+image of me, sitting in the chair, looking nice, like I often do.
+But also somewhat thoughtful.](/media/images/erik_in_chair_w300.png
+ "This will be the alt text")
 
 You can do this with references as well.
 
@@ -212,24 +216,26 @@ z      3         k       great
 I can also write tables by using `orgtbl-mode` to edit the tables. I
 can't control their alignment though.
 
-|-----+------+-------|
++-----+------+-------+
 | One | Two  | Three |
-|-----+------+-------|
++=====+======+=======+
 | 1   | 2    | 3     |
++-----+------+-------+
 | uno | dos  | tres  |
++-----+------+-------+
 | un  | deux | trois |
++-----+------+-------+
 | yi  | er   | san   |
-|-----+------+-------|
++-----+------+-------+
 
 Maybe that doesn't matter in html though? I wonder how these will come
 out differently than if I manually add in the colons that are used to
 determine alignment for "pipe tables"
 
-|-----+------+-------|
+
 | One | Two  | Three |
-|:----+:----:+------:|
+|:----|:----:|------:|
 | 1   | 2    | 3     |
 | uno | dos  | tres  |
 | un  | deux | trois |
 | yi  | er   | san   |
-|-----+------+-------|
