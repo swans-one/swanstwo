@@ -1,9 +1,13 @@
 ---
-title: This is my test post.
+title: 'This is my test post:'
+short-title: 'Test Post'
 subtitle: Where I try out all my pandoc features
 author: Erik Swanson
 published: 6/22/2016
 last_modified: 6/22/2016
+breadcrumb:
+- link: '/writings'
+  name: 'Writings'
 
 ---
 
