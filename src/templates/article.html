@@ -12,65 +12,69 @@
       $title$
     $endif$
   </title>
+  <link rel="stylesheet" type="text/css" href="/css/writings/base_post.css" />
 </head>
 
 
 <body>
 <nav>
-  <!-- The Hexagon'd E -->
-  <div id="hex">
-    <a href="/">
-      <div class="hex-40">
-        <div class="hex-outer">
-          <div class="hex-inner color-faceless-taupe">
-            <span class="hex-content"> E </span>
-          </div>
-        </div>
-      </div>
-    </a>
-  </div>
-  <!-- The breadcrumbs -->
   <ol>
+    <li>
+      <!-- The Hexagon'd E -->
+      <div id="hex">
+        <a href="/">
+          <div class="hex-40">
+            <div class="hex-outer">
+              <div class="hex-inner color-faceless-taupe">
+                <span class="hex-content"> E </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </li>
+    <!-- The breadcrumbs -->
     $for(breadcrumb)$
-      <a href="$breadcrumb.link$">
-        <li class="breadcrumb">
-          $breadcrumb.name$
-        </li>
-      </a>
-    $endfor$
-    <a href="">
       <li class="breadcrumb">
-        $if(short-title)$
-          $short-title$
-        $else$
-          $title$
-        $endif$
+        <a href="$breadcrumb.link$">
+            $breadcrumb.name$
+        </a>
       </li>
-    </a>
+    $endfor$
+      <li class="breadcrumb">
+        <a href="">
+          $if(short-title)$
+            $short-title$
+          $else$
+            $title$
+          $endif$
+        </a>
+      </li>
   </ol>
 </nav>
 
 
 <article>
-  <h1 id="title">$title$</h1>
-  <h1 id="subtitle">$subtitle$</h1>
   $body$
+
+  <section class="endnote">
+    <hr class="gradient">
+    <p>
+      Any questions, comments, suggestions about this post? Or anything
+      else? Feel free to send me an
+      email: <a href="mailto:TheErikSwanson@gmail.com">TheErikSwanson@gmail.com</a>.
+    </p>
+  </section>
+
 </article>
 
 
-<section class="endnote">
-  <hr class="gradient">
-  <p>
-    Any questions, comments, suggestions about this post? Or anything
-    else? Feel free to send me an
-    email: <a href="mailto:TheErikSwanson@gmail.com">TheErikSwanson@gmail.com</a>.
-  </p>
-</section>
-
-
-<footer>
-  <div>Erik Swanson</div>
-  <div><a href="/">Home</a></div>
+<footer class="ishadow">
+  <div class="footer-content flex-lcr">
+    <div class="flex-lcr-left">Erik Swanson</div>
+    <div class="flex-lcr-center"></div>
+    <div class="flex-lcr-right"><a href="/">Home</a></div>
+  </div>
 </footer>
 </body>
 

@@ -11,14 +11,17 @@ breadcrumb:
 
 ---
 
-Testing 123
-===========
+This Is My Test Post: {#title}
+==============================
+
+Where I try out all my pandoc features {#subtitle}
+==================================================
 
 This is a test of how all the elements of markdown can be converted
 into html. I'm writing this so that I can style them appropriately.
 
 Simple Formatting
-=================
+-----------------
 
 We can _put words into italic_, we can **make words bold**. We can
 make words **bold _and_** _italic_. These are the various types of
@@ -30,10 +33,11 @@ able to style h1 and h2 tags in a reasonable way that also happens to
 be separate from the title/subtitle tags.
 
 Different types of headings
-===========================
+---------------------------
 
 We should be able to do headings from \<h1\> all the way to \<h6\>.
 
+# Heading 1
 ## Heading 2
 ### Heading 3
 #### Heading 4
@@ -42,7 +46,7 @@ We should be able to do headings from \<h1\> all the way to \<h6\>.
 
 Headers can also be given explicit identifiers:
 
-### This is about pizza {#pizza .flatbread toppings=none}
+#### This is about pizza {#pizza .flatbread toppings=none}
 
 For example, this section about pizza will end up with an html
 `id="pizza", class="flatbread", toppings="none"`. If we didn't
@@ -52,7 +56,7 @@ replacing spaces with hypens. Here, it would be
 `id=this-is-about-pizza`.
 
 Lists
-=====
+-----
 
 We should be able to do ordered lists. These should work no matter
 what numbers I use to write the markdown code. It should be simple to
@@ -109,10 +113,9 @@ Term 2
 
 
 Links and images
-================
+----------------
 
-Links
------
+### Links
 
 Here's a link to [Google](www.google.com). I can also use automatic
 links, which will just show up as a link
@@ -129,8 +132,7 @@ were more descriptive, it might look better, but I can just say [cmu-map][].
 
 [cmu-map]: <https://www.google.com/maps/place/Carnegie+Mellon+University/@40.4416628,-79.9449655,16.44z/data=!4m5!3m4!1s0x0000000000000000:0x88716b461fc4daf4!8m2!3d40.4443261!4d-79.9448986>
 
-Images
-------
+### Images
 
 All it takes to add an image is to immediately prepend a link with an
 \!. Apparently it will be wrapped in a `<figure>` block, and what
@@ -144,7 +146,7 @@ But also somewhat thoughtful.](/media/images/erik_in_chair_w300.png
 You can do this with references as well.
 
 Code Formatting and Syntax Highlighting
-=======================================
+---------------------------------------
 
 I'm going to try out a couple languages and see how the highlighting
 comes out. I'm not sure what it will look like, but hopefully it's
@@ -174,7 +176,7 @@ example if I wanted to reference `SomeClass` from above, I should be
 able to do so fairly easily.
 
 Quotes and Blockquotes
-======================
+----------------------
 
 I want to see what things look like in block quotes.
 
@@ -192,7 +194,7 @@ I can still do inline quotes with <q>This is a quote</q>. But I don't
 think there's markdown support for that.
 
 Embedded HTML
-=============
+-------------
 
 I should be able to embed arbitrary html. Like, make a figure:
 
@@ -205,7 +207,7 @@ I should also be able to inline markup, like adding a quote, but
 <q>Ain't nobody got time for that</q>.
 
 Tables
-======
+------
 
 We're going to test a couple table styles. I'm not sure which I
 prefer.

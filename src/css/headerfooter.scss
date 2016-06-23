@@ -33,7 +33,7 @@ footer {
     height: 24px;
     width: 100%;
     padding-top: 8px;
-    background: $color-glass-white;
+    background-color: $color-faceless-taupe;
 }
 
 .breadcrumb {
@@ -42,8 +42,4 @@ footer {
     padding: 10px 0px 10px 0px;
 
     &:before { content: ": "; }
-}
-
-.ishadow {
-    box-shadow: inset 0px 1px 1px rgba($color-field-of-thorns-black, 0.2);
 }
