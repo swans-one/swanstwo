@@ -10,8 +10,7 @@ var config = {
         css: './src/css/**/*.css',
         sass: './src/css/**/*.scss',
         articles: './src/articles/**/*.md',
-        images: './src/media/images/**/*',
-        presentations: './src/media/presentations/**/*',
+        media: './src/media/**/*',
         favicon: './src/html/favicon.ico',
         fonts: './src/fonts/**/*',
         dist: './static',
@@ -42,13 +41,8 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(config.paths.dist))
 });
 
-gulp.task('images', function () {
-    gulp.src(config.paths.images, {base: './src'})
-        .pipe(gulp.dest(config.paths.dist))
-});
-
-gulp.task('presentations', function () {
-    gulp.src(config.paths.presentations, {base: './src'})
+gulp.task('media', function () {
+    gulp.src(config.paths.media, {base: './src'})
         .pipe(gulp.dest(config.paths.dist))
 });
 
@@ -80,8 +74,7 @@ gulp.task(
         'css',
         'sass',
         'articles',
-        'images',
-        'presentations',
+        'media',
         'favicon',
         'fonts',
     ]
