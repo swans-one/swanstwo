@@ -20,12 +20,8 @@ nav {
     flex: 0 0 65px;
 
     a {
-        @include ease-in-out;
-
-        color: $color-toy-blue;
-
+        &:visited { color: $color-toy-blue; }
         &:hover { color: $color-berry-munch-pink; }
-        &:active { color: $color-berry-munch-pink; }
     }
 
     ol {
@@ -51,14 +47,6 @@ article {
 
     p, ol, ul, blockquote, table, figure, pre {
         margin-bottom: 1.5em;
-    }
-    a {
-        &:link {
-            color: $color-toy-blue;
-            text-decoration: none; }
-        &:visited { color: $color-tint-blue; }
-        &:hover { color: $color-berry-munch-pink; }
-        &:active { color: $color-berry-munch-pink; }
     }
 
     blockquote {
@@ -97,75 +85,6 @@ article {
             font-style: italic; }
     }
 }
-
-footer {
-    flex: 0 0 24px;
-    background-color: $color-faceless-taupe;
-    padding-top: 8px;
-
-    .footer-content {
-        max-width: 800px;
-        margin-left: 10%;
-        maring-right: 10%;
-    }
-
-    a {
-        @include ease-in-out;
-
-        color: $color-toy-blue;
-        text-decoration: none;
-
-        &:hover { color: $color-berry-munch-pink; }
-        &:active { color: $color-berry-munch-pink; }
-    }
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: BlackboxMonoSerifBold, Courier, mono;
-    text-decoration: underline;
-    margin-bottom: 5px;
-}
-h1 {
-    font-size: 2em;
-}
-h2 {
-    font-size: 1.5em;
-}
-h3 {
-    font-size: 1.3em;
-}
-pre {
-    font-family: Courier, mono;
-}
-
-table {
-    background: $color-glass-white;
-    color: $color-field-of-thorns-black;
-    font-family: Helvetica, Ariel, sans-serif;
-    font-size: .9em;
-    margin-left: 10%;
-    margin-bottom: 1.5em;
-    width: 80%;
-    border-collapse: collapse;
-    text-align: center;
-
-    th {
-        font-size: 1em;
-        font-weight: normal;
-        padding: 5px 8px;
-        border-bottom: 2px solid $color-field-of-thorns-black;
-    }
-
-    td {
-        border-bottom: 2px solid $color-faceless-taupe;
-        padding: 2px 4px;
-    }
-
-    tbody tr:hover td {
-        background: $color-faceless-taupe;
-    }
-}
-
 
 #title {
     font-size: 2em;

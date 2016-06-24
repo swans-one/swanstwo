@@ -18,8 +18,8 @@
     width: 600px;
 
     > h1 {
-        font-family: BlackboxMonoSerifBold, Courier, mono;
         font-size: 4em;
+        text-decoration: none;
     }
 }
 
@@ -29,10 +29,7 @@
     width: 80%;
 
     a, li {
-        -webkit-transition: all .25s ease-in-out;
-        -moz-transition: all .25s ease-in-out;
-        -o-transition: all .25s ease-in-out;
-        transition: all .25s ease-in-out;
+        @include ease-in-out
     }
 }
 
@@ -66,7 +63,6 @@
 }
 
 .nav-elem {
-    font-family: Helvetica, sans-serif;
     font-size: 1.2em;
 
     padding-top: 10px;
@@ -80,22 +76,19 @@
     border-top-width: 1px;
     border-top-color: $color-field-of-thorns-black;
 
-    color: $color-field-of-thorns-black;
-
     a {
         position: relative;
-        height: 1px;
+        display: block;
+        height: 100%;
         width: 100%;
+
         text-decoration: none;
         color: $color-field-of-thorns-black;
 
         &:hover {
-            color: $color-berry-munch-pink;
-        }
-
+            color: $color-berry-munch-pink; }
         &:active {
-            color: $color-berry-munch-pink;
-        }
+            color: $color-berry-munch-pink; }
     }
 
     &:hover {
