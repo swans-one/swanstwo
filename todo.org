@@ -38,18 +38,19 @@ Or with different names
 ** TODO Unify header/footer styling (remove from base_post.scss)
 ** TODO Unify link coloring in base.scss
 
-* SASS [0/3]
+* SASS [0/4]
 ** TODO Figure out some best practices
 ** TODO Organize the files more nicely (directory structure)
 Or, alternatively, setup the load path somehow.
 ** TODO Replace font choices with variables
 like: font-title, font-body
+** TODO Do some unification of styles
 
 
-* Conversion [7/8]
+* Conversion [8/8]
 ** DONE Convert my homepage css to sass
 ** DONE Convert my hexagon css to sass
-** TODO Convert my article to markdown
+** DONE Convert my article to markdown
 ** DONE Convert my article css to sass
 ** DONE Convert my presentation page css to sass
 ** DONE Convert my presentation page to use the same sass as my article
@@ -58,12 +59,12 @@ like: font-title, font-body
 And all the crufty test stuff
 
 * Meta-data [0/3]
-** TODO Get pandoc to handle article metadata [0/4]
-- [ ] Author
-- [ ] Date Written
-- [ ] Last modified
+** TODO Get pandoc to handle article metadata [4/5]
+- [X] Author
+- [X] Date Written
+- [X] Last modified
 - [ ] License
-- [ ] Breadcrumbs for article header
+- [X] Breadcrumbs for article header
 ** TODO Organize the files by date (in filesystem)
 ** TODO Use handlebars to template out the writings list
 
