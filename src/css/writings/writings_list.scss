@@ -1,7 +1,13 @@
 @import '../base';
 
 @import '../hex-lib';
-@import '../headerfooter';
+@import '../top-nav';
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
 #writings-list {
     margin-left: 10%;

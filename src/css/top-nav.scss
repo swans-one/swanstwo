@@ -1,0 +1,27 @@
+@import 'colors';
+
+nav {
+    font-family: BlackboxMonoSerifBold, Courier, mono;
+    font-size: 1.1em;
+    background-color: $color-faceless-taupe;
+    padding-left: 10px;
+    box-shadow: inset 0px -1px 1px rgba($color-field-of-thorns-black, 0.2);
+    flex: 0 0 65px;
+
+    a {
+        &:visited { color: $color-toy-blue; }
+        &:hover { color: $color-berry-munch-pink; }
+    }
+
+    ol {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    li {
+        &:before {
+            content: ": ";
+            color: $color-toy-blue; }
+        &:first-child:before { content: "" }
+    }
+}

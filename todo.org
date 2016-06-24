@@ -38,10 +38,12 @@ Or with different names
 ** TODO Unify header/footer styling (remove from base_post.scss)
 ** TODO Unify link coloring in base.scss
 
-* SASS [0/4]
+* SASS [0/5]
 ** TODO Figure out some best practices
 ** TODO Organize the files more nicely (directory structure)
 Or, alternatively, setup the load path somehow.
+Look into this:
+http://thesassway.com/beginner/how-to-structure-a-sass-project
 ** TODO Replace font choices with variables
 like: font-title, font-body
 ** TODO Do some unification of styles
