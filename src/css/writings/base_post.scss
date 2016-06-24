@@ -88,10 +88,11 @@ article {
     figure {
         img {
             display: block;
+            border: 1px solid $color-field-of-thorns-black;
             margin: 0 auto; }
         figcaption {
-            margin: 0 40px 0 40px;
-            line-height: 1.2em;
+            margin: 10px 40px 0 40px;
+            line-height: 1.3em;
             font-size: 0.9em;
             font-style: italic; }
     }
@@ -106,6 +107,16 @@ footer {
         max-width: 800px;
         margin-left: 10%;
         maring-right: 10%;
+    }
+
+    a {
+        @include ease-in-out;
+
+        color: $color-toy-blue;
+        text-decoration: none;
+
+        &:hover { color: $color-berry-munch-pink; }
+        &:active { color: $color-berry-munch-pink; }
     }
 }
 
