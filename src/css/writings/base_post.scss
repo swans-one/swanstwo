@@ -44,7 +44,7 @@ nav {
 article {
     margin-left: 10%;
     margin-right: 10%;
-    padding: 80px 0px 80px 0px;
+    padding: 80px 0px 20px 0px;
     line-height: 1.5em;
     font-size: 1.1em;
     max-width: 800px;
@@ -178,6 +178,11 @@ table {
     text-decoration: none;
 }
 
+
+.centering {
+    text-align: center;
+}
+
 .color-faceless-taupe {
     @include color-hex($color-faceless-taupe);
 }
@@ -205,6 +210,7 @@ table {
 }
 
 .endnote {
+    margin-top: 60px;
     font-size: .8em;
     font-style: italic;
 }
