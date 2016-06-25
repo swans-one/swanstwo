@@ -30,13 +30,15 @@ They should go in:
 Or with different names
 ** TODO Configure nginx to use them
 
-* Style [1/6]
+* Style [5/7]
 ** DONE Get gulp to compile sass to css
 ** TODO Get source code highlighting working
-** TODO Improve the style for the html templates
-** TODO A more consistent clearfix?
-** TODO Unify header/footer styling (remove from base_post.scss)
-** TODO Unify link coloring in base.scss
+** DONE Improve the style for the html templates
+** DONE A more consistent clearfix?
+- I did this using flexbox! Cool!
+** DONE Unify header/footer styling (remove from base_post.scss)
+** DONE Unify link coloring in base.scss
+** TODO Improve the fonts
 
 * SASS [0/5]
 ** TODO Figure out some best practices
