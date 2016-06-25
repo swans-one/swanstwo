@@ -82,6 +82,8 @@ And all the crufty test stuff
 ** TODO Write down in the readme how we're going to deploy
 ** TODO Make sure that nginx is configured properly for DO
 ** TODO Consider writing a systemd/upstart service?
+** TODO Setup volumes for access/error logs
+
 
 * Development Tools
 ** TODO Improve the builddev.sh [0/3]
