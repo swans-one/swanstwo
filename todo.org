@@ -30,7 +30,7 @@ They should go in:
 Or with different names
 ** TODO Configure nginx to use them
 
-* Style [5/7]
+* Style [5/8]
 ** DONE Get gulp to compile sass to css
 ** TODO Get source code highlighting working
 ** DONE Improve the style for the html templates
@@ -39,6 +39,9 @@ Or with different names
 ** DONE Unify header/footer styling (remove from base_post.scss)
 ** DONE Unify link coloring in base.scss
 ** TODO Improve the fonts
+- I switched to Open Sans
+- I still wouldn't mind buying/switching to Freight Pro
+** TODO Improve the header behavior on small screens
 
 * SASS [0/5]
 ** TODO Figure out some best practices
