@@ -20,6 +20,16 @@ var config = {
     },
 };
 
+var default_tasks = [
+    'html',
+    'css',
+    'sass',
+    'articles',
+    'media',
+    'favicon',
+    'fonts',
+]
+
 var pandoc_articles_config = [
     '--smart',
     '--template=' + config.templates.article_template,
@@ -67,15 +77,10 @@ gulp.task('articles', function () {
         .pipe(gulp.dest(config.paths.dist + '/html'))
 });
 
+gulp.task('watch', function () {
+    gulp.watch('./src/**/*', default_tasks)
+});
+
 gulp.task(
-    'default',
-    [
-        'html',
-        'css',
-        'sass',
-        'articles',
-        'media',
-        'favicon',
-        'fonts',
-    ]
+    'default', default_tasks
 );
