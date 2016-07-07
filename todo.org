@@ -65,7 +65,7 @@ like: font-title, font-body
 ** DONE Delete all the old/outdated stuff
 And all the crufty test stuff
 
-* Meta-data [0/3]
+* Meta-data [0/4]
 ** TODO Get pandoc to handle article metadata [4/5]
 - [X] Author
 - [X] Date Written
@@ -74,6 +74,7 @@ And all the crufty test stuff
 - [X] Breadcrumbs for article header
 ** TODO Organize the files by date (in filesystem)
 ** TODO Use handlebars to template out the writings list
+** TODO Make sure all the old link styles work. I don't want to have dead links.
 
 * New Content [0/2]
 ** TODO Make a test post to stress all the features I want to see
