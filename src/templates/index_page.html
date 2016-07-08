@@ -1,3 +1,48 @@
 <html>
+
+<head>
+<meta charset="utf-8">
+<title>Writings</title>
+<link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic">
+<link rel="stylesheet" type="text/css" href="/css/writings/writings_list.css" />
+</head>
+
+<body>
+
+<nav>
+  <ol>
+    <li>
+      <!-- The Hexagon'd E -->
+      <div id="hex">
+        <a href="/">
+          <div class="hex-40">
+            <div class="hex-outer">
+              <div class="hex-inner color-faceless-taupe">
+                <span class="hex-content"> E </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </li>
+    <!-- The breadcrumbs -->
+    $for(breadcrumb)$
+      <li class="breadcrumb">
+        <a href="$breadcrumb.link$">
+            $breadcrumb.name$
+        </a>
+      </li>
+    $endfor$
+  </ol>
+</nav>
+
+
+<article>
+<div id="writings-list">
   $body$
+</div>
+</article>
+
+</body>
 </html>
