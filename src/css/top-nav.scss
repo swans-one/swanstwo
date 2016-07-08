@@ -1,12 +1,14 @@
 @import 'colors';
 
+$top-nav-height: 65px;
+
 nav {
     font-family: BlackboxMonoSerifBold, Courier, mono;
     font-size: 1.1em;
     background-color: $color-faceless-taupe;
     padding-left: 10px;
     box-shadow: inset 0px -1px 1px rgba($color-field-of-thorns-black, 0.2);
-    flex: 0 0 65px;
+    flex: 0 0 $top-nav-height;
 
     a {
         &:visited { color: $color-toy-blue; }
@@ -14,7 +16,7 @@ nav {
     }
 
     ol {
-        height: 100%;
+        height: $top-nav-height;
         display: flex;
         align-items: center;
     }
