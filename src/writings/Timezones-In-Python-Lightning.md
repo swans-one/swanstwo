@@ -24,7 +24,7 @@ the existing solutions for working with time-zone aware data.
 The slides can be found here:
 
 <div class="centering">
-[Timezones in Python](/media/presentations/2014/)
+[Timezones in Python](/media/presentations/2014/timezone_troubles.pdf)
 </div>
 
 At the time of the presentation I was helping to build an open source
