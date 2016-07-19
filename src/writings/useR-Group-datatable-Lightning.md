@@ -2,6 +2,7 @@
 title: 'Lightning talk on data.table'
 subtitle: Given to the useR group on November 4th 2013
 author: Erik Swanson
+presented: 11/4/2013
 published: 8/31/2013
 last_modified: 6/23/2016
 breadcrumb:
