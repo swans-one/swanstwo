@@ -1,0 +1,224 @@
+\documentclass[17pt,xcolor={dvipsnames}]{beamer}
+
+% packages
+\usepackage{graphicx}
+\usepackage{beameronera}
+\usepackage{listings}
+
+
+% setup author/title/etc
+\title{Timezone Troubles}
+\author{Erik Swanson}
+
+
+% Make it easy to include graphics:
+% from: http://tex.stackexchange.com/questions/11954/automatically-scale-big-and-small-graphics-for-beamer-presentations
+\newcommand {\slideimage}[1] {
+  \begin{center}
+    \includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{#1}
+  \end{center}
+}
+
+\newcommand{\pythonblock}{
+  \lstset{
+    basicstyle=\footnotesize,
+    commentstyle=\color{BrickRed},
+    keywordstyle=\color{Purple},
+  }
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \includegraphics[width=3in]{images/ambition-logo1024.png}
+  \end{center}
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+  \begin{center}
+    Do you support users in different timezones?
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \slideimage{images/usMapFinal/us_time_zones_01.png}
+\end{frame}
+
+\begin{frame}
+  \slideimage{images/usMapFinal/us_time_zones_02.png}
+\end{frame}
+
+\begin{frame}
+  \slideimage{images/usMapFinal/us_time_zones_03.png}
+\end{frame}
+
+\begin{frame}
+  \slideimage{images/usMapFinal/us_time_zones_04.png}
+\end{frame}
+
+\begin{frame}
+  \slideimage{images/usMapFinal/us_time_zones_05.png}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    What about global users?
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \slideimage{images/world_time_zones.png}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    These things are changing all the time.
+  \end{center}
+\end{frame}
+
+\begin{frame}{2013 Timezone Changes}
+  \fontsize{12pt}{12}\selectfont
+  \begin{itemize}
+    \item New Zones: Asia/Khandyga, Asia/Ust-Nera, Europe/Busingen.
+    \item Palestine observed DST starting March 29, 2013.
+    \item Paraguay's observation of DST moved to the 4th Sunday in
+      March every year.
+    \item Israel now falls back on the last Sunday of October.
+    \item This year Fiji will start DST on October 27, not October 20.
+    \item Morocco now observes DST from the last Sunday in March to
+      the last Sunday in October.
+    \item Jordan switches back to standard time at 00:00 on December
+      20, 2013.  The 2006-2011 transition schedule is planned to
+      resume in 2014.
+  \end{itemize}
+\end{frame}
+
+%% \begin{frame}
+%%   \begin{center}
+%%     It is important to keep historic timezone changes.
+%%   \end{center}
+%% \end{frame}
+
+
+%% \begin{frame}
+%%   \begin{center}
+%%     Daylight Saving Times make everything harder.
+%%   \end{center}
+%% \end{frame}
+
+\begin{frame}
+  \begin{center}
+    It would be extremely difficult to keep track of all this.\pause
+
+    \bigskip
+
+    Fortunately it's already been done.\pause
+
+    \bigskip
+
+    Even more fortunately, python has timezone tools.
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{datetime}
+  \pythonblock
+  \begin{lstlisting}[gobble=4, language=Python]
+    from datetime import datetime
+
+    current_time = datetime.utcnow()
+  \end{lstlisting}
+
+  \bigskip \pause
+
+  Every unified standard for timekeeping is bad. UTC is probably the
+  least aweful.
+
+  \bigskip \pause
+
+  Only convert to local time on display.
+\end{frame}
+
+\begin{frame}[fragile]{datetime}
+  \pythonblock
+  \begin{lstlisting}[gobble=4, language=Python]
+    from datetime import tzinfo
+    help(tzinfo)
+  \end{lstlisting}
+
+  \bigskip \pause
+
+  ``Abstract base class for time zone info objects.''
+
+  \bigskip \pause
+
+  I thought you said there were tools?
+
+\end{frame}
+
+\begin{frame}[fragile]{pytz}
+  \pythonblock
+  \begin{lstlisting}[gobble=4, language=Python]
+    import pytz
+    len(pytz.common_timezones) # 403
+    pytz.common_timezones
+  \end{lstlisting}
+
+  \bigskip \pause
+
+  ... 'Antarctica/Vostok', 'Arctic/Longyearbyen', 'Asia/Aden', 'Asia/Almaty', 'Asia/Amman', 'Asia/Anadyr', 'Asia/Aqtau' ...
+
+\end{frame}
+
+\begin{frame}[fragile]{pytz conversion}
+
+  \pythonblock
+  \begin{lstlisting}[gobble=4, language=Python]
+    from datetime import datetime
+    from pytz import timezone
+
+    from_zone = timezone('UTC')
+    to_zone = timezone('America/Eastern')
+
+    utc = datetime.utcnow()
+
+    utc = utc.replace(tzinfo=from_zone)
+    eastern = utc.astimezone(to_zone)
+
+    # pytz.normalize
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}{others}
+  \begin{itemize}
+    \item date, time, calendar
+    \item dateutils
+    \item django-timezone-field
+  \end{itemize}
+
+  \bigskip \pause
+
+  A PyPi search for ``timezone'' yields 238 results. The first 29 all
+  seem pretty relevant.
+\end{frame}
+
+\begin{frame}{Prefereably Only One}
+  \begin{center}
+
+    There isn't. But we're working on it.
+
+    \bigskip \bigskip \pause
+
+    \texttt{fleming}
+
+    \bigskip \bigskip \pause
+
+    Please Help.
+
+  \end{center}
+\end{frame}
+
+\end{document}
