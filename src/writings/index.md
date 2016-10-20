@@ -12,7 +12,7 @@ breadcrumb:
 # Presentations And Workshops
 
 - [Python Packaging: What and How.](/)
-- [Django Packaging: Turn your Django Apps into distributable Python Packages](/)
+- [Django Packaging: Turn your Django Apps into distributable Python Packages](/writings/Packaging-Django-Apps)
 - [An Introduction to Julia for Scientific Computing](/writings/Intro-To-Julia)
 - [Why Julia: Lighting Talk.](/writings/Why-Julia-Lightning)
 - [Music Abstractions: Making Music with Clojure and Overtone.](/writings/Music-Abstractions)
