@@ -9,6 +9,12 @@ breadcrumb:
 
 - [Variety in Public Radio Music: A Look at the Data.](/writings/Variety-in-Public-Radio-Music)
 
-# Presentations
+# Presentations And Workshops
 
-- [Lightning Talk for Pittsburgh useR Group on data.table.](/articles/useR-Group-datatable-Lightning)
+- [Python Packaging: What and How.](/writings/Python-Packaging)
+- [Django Packaging: Turn your Django Apps into distributable Python Packages](/writings/Packaging-Django-Apps)
+- [An Introduction to Julia for Scientific Computing](/writings/Intro-To-Julia)
+- [Why Julia: Lighting Talk.](/writings/Why-Julia-Lightning)
+- [Music Abstractions: Making Music with Clojure and Overtone.](/writings/Music-Abstractions)
+- [Timezones in Python: Lightning Talk.](/writings/Timezones-In-Python-Lightning)
+- [Introducing R's data.table: Lighting Talk.](/writings/useR-Group-datatable-Lightning)
