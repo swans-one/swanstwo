@@ -19,7 +19,7 @@ Into Distributable Packages {#subtitle}
 
 
 One of the cool things about Django projects being broken down in to
-Apps, is that these apps can be packaged and distributated
+Apps, is that these apps can be packaged and distributed
 separately. This presentation, given to Pittsburgh Code and Supply on
 July 8th, 2015, detailed why you might want to turn your Django apps
 into packages, and how to do so.
@@ -48,7 +48,7 @@ Additional Resources
 There are lots of good resources on Python packaging and Django
 applications, a few of which are listed below. Additionally, I've
 included a link to the template that I've in the past for setting up
-the intial structure of my projects.
+the initial structure of my projects.
 
 - [Python Packaging Users Guide](https://packaging.python.org/)
 - [Django Applications](https://docs.djangoproject.com/en/1.10/ref/applications/)
