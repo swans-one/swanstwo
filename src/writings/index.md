@@ -11,7 +11,7 @@ breadcrumb:
 
 # Presentations And Workshops
 
-- [Python Packaging: What and How.](/)
+- [Python Packaging: What and How.](/writings/Python-Packaging)
 - [Django Packaging: Turn your Django Apps into distributable Python Packages](/writings/Packaging-Django-Apps)
 - [An Introduction to Julia for Scientific Computing](/writings/Intro-To-Julia)
 - [Why Julia: Lighting Talk.](/writings/Why-Julia-Lightning)

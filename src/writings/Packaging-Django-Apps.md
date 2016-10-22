@@ -39,6 +39,8 @@ packaged, installable django application:
 [Django Kittens](https://github.com/swans-one/django-kittens)
 </div>
 
+For another treatment of python packaging, see the notes from my
+presentation on [Python Packaging: What and How](/writings/Python-Packaging)
 
 Additional Resources
 --------------------
