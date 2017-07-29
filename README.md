@@ -45,6 +45,12 @@ gulp favicon
 gulp fonts
 ```
 
+Gulp can also be run to watch for changes and auto-build them with:
+
+```
+gulp watch
+```
+
 Deploying To a host
 --------------------------
 
