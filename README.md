@@ -9,28 +9,14 @@ via nginx, with local development enabled by docker.
 Local Docker
 ------------
 
-Get the docker-machine running (since I'm working on OSX):
-
-```
-docker-machine up
-eval $(docker-machine env)
-```
-
 Build and run the container:
 
 ```
 docker build -t swanstwo .
-docker run -d -p 8080:80 swanstwo
+docker run -d -p 8080:80 -v "$(pwd)/static:/usr/share/nginx" swanstwo
 ```
 
-To see the webpage running locally inside docker, first find the ip of
-the locally running vm via:
-
-```
-docker-machine ip
-```
-
-Then visit this ip, at port 8080 (probably something like 192.168.99.101:8080).
+Then visit localhost:8080
 
 
 Local Development with Gulp
@@ -50,4 +36,48 @@ The default gulp command runs the following sub-commands:
 
 ```
 gulp html
+gulp css
+gulp sass
+gulp articles
+gulp index_pages
+gulp media
+gulp favicon
+gulp fonts
+```
+
+Gulp can also be run to watch for changes and auto-build them with:
+
+```
+gulp watch
+```
+
+Deploying To a host
+--------------------------
+
+## Provisioning / Setup
+
+Provision a server on a host. Make sure to setup keypair
+authentication for ssh.
+
+On the host, the following tools will need to be installed.
+
+```
+apt-get install docker pandoc nodejs nodejs-legacy npm
+npm install gulp-cli --global
+```
+
+In the home directory of your user, clone this repo (only needs to be
+done during setup):
+
+```
+git clone git@github.com:swans-one/swanstwo.git
+```
+
+## Deploying
+
+Deployment is automated through the simple script `deploy.sh`, which
+takes a single argument, the destination to ssh to and deploy:
+
+```
+./deploy.sh user@host
 ```
