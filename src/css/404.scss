@@ -1,0 +1,31 @@
+@import 'base';
+
+html {
+    height: 100%;
+}
+
+a {
+    @include ease-in-out;
+
+    text-decoration: none;
+    color: $color-toy-blue;
+
+    &:link {
+        color: $color-toy-blue;
+        text-decoration: none; }
+    &:visited { color: $color-tint-blue; }
+    &:hover { color: $color-berry-munch-pink; }
+    &:active { color: $color-berry-munch-pink; }
+}
+
+.container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    padding-bottom: 20px;
+    flex: 1 1 1;
+}
